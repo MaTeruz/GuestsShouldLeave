@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -40,9 +40,11 @@ namespace GuestsShouldLeave
                 product.Print();
             }
 
+            //sry for temp variables
             int priceMax = 0;
             int priceMin = 100;
 
+            //a loop to find price max and min price
             foreach (Product product in products)
             {
                 if (product.Price > priceMax)
@@ -55,11 +57,15 @@ namespace GuestsShouldLeave
                 }
             }
 
+            //prints max and min price
             Console.WriteLine($"\nThe most expensive product is: {priceMax}");
             Console.WriteLine($"\nThe cheapest product is: {priceMin}");
-
-
             
+            //find and item in my queue
+            Product soldFirst = products.Dequeue();
+            Console.WriteLine($"\nSold first: {soldFirst.Name} ");
+
+
             Console.WriteLine("");
 
             Console.ReadKey();
